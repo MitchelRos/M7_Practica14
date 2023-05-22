@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ToDo\ListControler;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Ruta de inicio
+Route::get('/', function () {return view('welcome');});
+
+// Rutas de Lista
+Route::get('/todolist', [ListControler::class, 'index'])->name('to.do.list');
